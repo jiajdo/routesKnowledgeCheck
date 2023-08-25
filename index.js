@@ -14,8 +14,11 @@ const jiadirname = path.resolve();
 const PORT = 8080; 
 
 app.get('/', (req, res) => {
-    console.log('someone is home')
     res.sendFile(path.join(jiadirname, 'index.html'));
+})
+
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(jiadirname, 'about.html'))
 })
 
 app.listen(PORT, () => {
