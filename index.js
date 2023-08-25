@@ -21,6 +21,14 @@ app.get('/about', (req, res) => {
     res.sendFile(path.join(jiadirname, 'about.html'))
 })
 
+app.get('/contactme', (req, res) => {
+    res.sendFile(path.join(jiadirname, 'contactme.html'))
+})
+
+app.all('*', (req,res) => {
+    res.sendFile(path.join(jiadirname, '404.html'))
+})
+
 app.listen(PORT, () => {
     console.log(`Hi Barbie! Server is running on port ${PORT}`)
 });
